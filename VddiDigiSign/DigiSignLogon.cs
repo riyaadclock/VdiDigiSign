@@ -20,7 +20,8 @@ namespace VddiDigiSign
         private void btnLogon_Click(object sender, EventArgs e)
         {
             this.Hide();
-            VDISign frmScan = new VDISign();
+            //VDISign frmScan = new VDISign();
+            DigiScan frmScan = new DigiScan();
             frmScan.ShowDialog();
             this.Close();
         }
