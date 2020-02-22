@@ -16,5 +16,13 @@ namespace VddiDigiSign
         {
             InitializeComponent();
         }
+
+        private void btnLogon_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            VDISign frmScan = new VDISign();
+            frmScan.ShowDialog();
+            this.Close();
+        }
     }
 }
