@@ -99,6 +99,31 @@ namespace VddiDigiSign
             //  Start SignMode
             bool x = sopadDLL.SOPAD_startCapture(pcert, true, true, false, true, psettings);
 
+            //  Enable Timer for Preview Image while signing
+            if (x) timer1.Enabled = true;
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            int width = 400;
+            int height = 300;
+
+            int picsize = 0;
+
+            //  Read Preview Image and update PictureBox while signing
+            IntPtr picture = sopadDLL.SOPAD_ReadPreviewImage(0, width, height, ref picsize);
+            if (picsize > 0)
+            {
+                byte[] managedArray = new byte[picsize];
+                Marshal.Copy(picture, managedArray, 0, picsize);
+
+                MemoryStream ms = new MemoryStream();
+                ms.Write(managedArray, 0, Convert.ToInt32(managedArray.Length));
+                pictureBox1.Image = Image.FromStream(ms);
+                pictureBox1.Refresh();
+
+            }
         }
 
         private void btnLead_Click(object sender, EventArgs e)

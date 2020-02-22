@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSearchPad = new System.Windows.Forms.Button();
             this.btnStartScan = new System.Windows.Forms.Button();
             this.btnLead = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             this.txtOtp = new System.Windows.Forms.TextBox();
             this.btnOtp = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,9 +78,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(76, 420);
+            this.pictureBox1.Location = new System.Drawing.Point(76, 512);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(890, 562);
+            this.pictureBox1.Size = new System.Drawing.Size(881, 470);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -155,7 +157,9 @@
             // 
             // VDISign
             // 
-            this.ClientSize = new System.Drawing.Size(1636, 1165);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1798, 1032);
             this.Controls.Add(this.btnOtp);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtOtp);
@@ -190,5 +194,6 @@
         private System.Windows.Forms.TextBox txtOtp;
         private System.Windows.Forms.Button btnOtp;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
