@@ -131,7 +131,8 @@ namespace VddiDigiSign
 
         private void DigiScan_Load(object sender, EventArgs e)
         {
-
+            this.AutoSize = true;
+            this.AutoSizeMode = AutoSizeMode.GrowOnly;
         }
 
         private void txtLead_TextChanged(object sender, EventArgs e)
@@ -165,6 +166,32 @@ namespace VddiDigiSign
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+              
+
+        protected override void SetClientSizeCore(int x, int y)
+        {
+            base.SetClientSizeCore(2132, 1263);
+        }
+
+        private void txtLead_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtOtp_TextChanged(object sender, EventArgs e)
         {
 
         }

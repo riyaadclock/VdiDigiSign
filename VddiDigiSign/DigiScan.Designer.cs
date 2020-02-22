@@ -67,6 +67,7 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "Enter OTP No Below:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtOtp
             // 
@@ -76,24 +77,27 @@
             this.txtOtp.Name = "txtOtp";
             this.txtOtp.Size = new System.Drawing.Size(267, 45);
             this.txtOtp.TabIndex = 22;
+            this.txtOtp.TextChanged += new System.EventHandler(this.txtOtp_TextChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1074, 447);
+            this.button1.Location = new System.Drawing.Point(1377, 447);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(273, 85);
             this.button1.TabIndex = 21;
             this.button1.Text = "Save Scan";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnStopScan
             // 
-            this.btnStopScan.Location = new System.Drawing.Point(1074, 323);
+            this.btnStopScan.Location = new System.Drawing.Point(1377, 323);
             this.btnStopScan.Name = "btnStopScan";
             this.btnStopScan.Size = new System.Drawing.Size(273, 85);
             this.btnStopScan.TabIndex = 20;
             this.btnStopScan.Text = "Stop Scan";
             this.btnStopScan.UseVisualStyleBackColor = true;
+            this.btnStopScan.Click += new System.EventHandler(this.btnStopScan_Click);
             // 
             // label1
             // 
@@ -105,6 +109,7 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Enter Lead No Below:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtLead
             // 
@@ -114,12 +119,13 @@
             this.txtLead.Name = "txtLead";
             this.txtLead.Size = new System.Drawing.Size(267, 45);
             this.txtLead.TabIndex = 18;
+            this.txtLead.TextChanged += new System.EventHandler(this.txtLead_TextChanged_1);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(79, 524);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(881, 470);
+            this.pictureBox1.Size = new System.Drawing.Size(1096, 517);
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
@@ -135,21 +141,23 @@
             // 
             // btnStartScan
             // 
-            this.btnStartScan.Location = new System.Drawing.Point(1074, 201);
+            this.btnStartScan.Location = new System.Drawing.Point(1377, 201);
             this.btnStartScan.Name = "btnStartScan";
             this.btnStartScan.Size = new System.Drawing.Size(273, 85);
             this.btnStartScan.TabIndex = 15;
             this.btnStartScan.Text = "Start Scan";
             this.btnStartScan.UseVisualStyleBackColor = true;
+            this.btnStartScan.Click += new System.EventHandler(this.btnStartScan_Click);
             // 
             // btnSearchPad
             // 
-            this.btnSearchPad.Location = new System.Drawing.Point(1074, 84);
+            this.btnSearchPad.Location = new System.Drawing.Point(1377, 84);
             this.btnSearchPad.Name = "btnSearchPad";
             this.btnSearchPad.Size = new System.Drawing.Size(273, 85);
             this.btnSearchPad.TabIndex = 14;
             this.btnSearchPad.Text = "Search for Pad";
             this.btnSearchPad.UseVisualStyleBackColor = true;
+            this.btnSearchPad.Click += new System.EventHandler(this.btnSearchPad_Click);
             // 
             // comboBox1
             // 
@@ -182,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1965, 2108);
+            this.ClientSize = new System.Drawing.Size(2100, 1175);
             this.Controls.Add(this.btnOtp);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtOtp);
