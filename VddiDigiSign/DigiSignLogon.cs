@@ -19,12 +19,41 @@ namespace VddiDigiSign
 
         private void btnLogon_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            //VDISign frmScan = new VDISign();
-            DigiScan frmScan = new DigiScan();
-            frmScan.ShowDialog();
-            this.Close();
-        }
+           
+
+            Models.CurrentUser PresentUser = new Models.CurrentUser();
+            Controllers.UserOperations userOps = new Controllers.UserOperations();
+
+            
+
+            if (string.IsNullOrWhiteSpace(txtUser.Text) == true | string.IsNullOrWhiteSpace(txtPwd.Text) == true)
+            {
+                lblError.Text = "Incorrect User Information";
+            }
+            else
+            {
+
+                int userstatus = userOps.checkUserCreds(txtUser.Text, txtPwd.Text);
+
+                if (userstatus > 0)
+                {
+                    lblError.Text = "Correct User Information All Good";
+                    this.Hide();
+                    DigiScan frmScan = new DigiScan();
+                    frmScan.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    lblError.Text = "Incorrect User Credentials";
+                }
+
+
+             }
+
+
+
+            }
 
         private void DigiSignLogon_Load(object sender, EventArgs e)
         {

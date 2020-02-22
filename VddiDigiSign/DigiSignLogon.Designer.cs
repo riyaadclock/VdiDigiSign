@@ -33,6 +33,7 @@
             this.txtPwd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLogon
@@ -88,11 +89,23 @@
             this.txtUser.TabIndex = 24;
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(218, 47);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 39);
+            this.lblError.TabIndex = 28;
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // DigiSignLogon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 621);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.label1);
@@ -114,6 +127,7 @@
         private System.Windows.Forms.TextBox txtPwd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.Label lblError;
     }
 }
 
