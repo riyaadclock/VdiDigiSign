@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1190, 488);
+            this.ClientSize = new System.Drawing.Size(1718, 928);
             this.Name = "DigiSignLogon";
             this.Text = "VDI DigiSign Logon";
             this.ResumeLayout(false);
