@@ -94,6 +94,10 @@ namespace VddiDigiSign
 
         private void btnStartScan_Click(object sender, EventArgs e)
         {
+            sopadDLL.SOPAD_SetDriverLong(59, 0);
+
+            //  Start SignMode
+            bool x = sopadDLL.SOPAD_startCapture(pcert, true, true, false, true, psettings);
 
         }
 
@@ -109,6 +113,26 @@ namespace VddiDigiSign
 
         private void txtLead_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnStopScan_Click(object sender, EventArgs e)
+        {
+            //  Disable SignMode (back to Standby Mode)
+            sopadDLL.SOPAD_stopCapture(padID, timestamp);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            thisFile = pictureBox1.Image;
+
+            SaveFileDialog svF = new SaveFileDialog();
+            svF.Filter = "JPG(*.JPG)|*.jpg";
+
+            if (svF.ShowDialog() == DialogResult.OK)
+            {
+                thisFile.Save(svF.FileName);
+            }
 
         }
     }

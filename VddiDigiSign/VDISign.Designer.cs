@@ -39,12 +39,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtOtp = new System.Windows.Forms.TextBox();
             this.btnOtp = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearchPad
             // 
-            this.btnSearchPad.Location = new System.Drawing.Point(1783, 358);
+            this.btnSearchPad.Location = new System.Drawing.Point(1071, 72);
             this.btnSearchPad.Name = "btnSearchPad";
             this.btnSearchPad.Size = new System.Drawing.Size(273, 85);
             this.btnSearchPad.TabIndex = 0;
@@ -54,7 +55,7 @@
             // 
             // btnStartScan
             // 
-            this.btnStartScan.Location = new System.Drawing.Point(1783, 475);
+            this.btnStartScan.Location = new System.Drawing.Point(1071, 189);
             this.btnStartScan.Name = "btnStartScan";
             this.btnStartScan.Size = new System.Drawing.Size(273, 85);
             this.btnStartScan.TabIndex = 1;
@@ -75,9 +76,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(126, 354);
+            this.pictureBox1.Location = new System.Drawing.Point(76, 420);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1465, 588);
+            this.pictureBox1.Size = new System.Drawing.Size(890, 562);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -104,21 +105,23 @@
             // 
             // btnStopScan
             // 
-            this.btnStopScan.Location = new System.Drawing.Point(1783, 597);
+            this.btnStopScan.Location = new System.Drawing.Point(1071, 311);
             this.btnStopScan.Name = "btnStopScan";
             this.btnStopScan.Size = new System.Drawing.Size(273, 85);
             this.btnStopScan.TabIndex = 6;
             this.btnStopScan.Text = "Stop Scan";
             this.btnStopScan.UseVisualStyleBackColor = true;
+            this.btnStopScan.Click += new System.EventHandler(this.btnStopScan_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1783, 721);
+            this.button1.Location = new System.Drawing.Point(1071, 435);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(273, 85);
             this.button1.TabIndex = 7;
             this.button1.Text = "Save Scan";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -152,7 +155,7 @@
             // 
             // VDISign
             // 
-            this.ClientSize = new System.Drawing.Size(2136, 1165);
+            this.ClientSize = new System.Drawing.Size(1636, 1165);
             this.Controls.Add(this.btnOtp);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtOtp);
@@ -186,5 +189,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtOtp;
         private System.Windows.Forms.Button btnOtp;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
