@@ -44,26 +44,30 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblCustomer = new System.Windows.Forms.Label();
+            this.lblError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOtp
             // 
             this.btnOtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOtp.Location = new System.Drawing.Point(570, 290);
+            this.btnOtp.Location = new System.Drawing.Point(264, 135);
+            this.btnOtp.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.btnOtp.Name = "btnOtp";
-            this.btnOtp.Size = new System.Drawing.Size(273, 85);
+            this.btnOtp.Size = new System.Drawing.Size(102, 36);
             this.btnOtp.TabIndex = 24;
-            this.btnOtp.Text = "Generate OTP";
+            this.btnOtp.Text = "Confirm OTP";
             this.btnOtp.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(148, 241);
+            this.label2.Location = new System.Drawing.Point(56, 135);
+            this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(303, 32);
+            this.label2.Size = new System.Drawing.Size(128, 13);
             this.label2.TabIndex = 23;
             this.label2.Text = "Enter OTP No Below:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -73,17 +77,19 @@
             // 
             this.txtOtp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOtp.Location = new System.Drawing.Point(154, 281);
+            this.txtOtp.Location = new System.Drawing.Point(58, 152);
+            this.txtOtp.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.txtOtp.Name = "txtOtp";
-            this.txtOtp.Size = new System.Drawing.Size(267, 45);
+            this.txtOtp.Size = new System.Drawing.Size(101, 22);
             this.txtOtp.TabIndex = 22;
             this.txtOtp.TextChanged += new System.EventHandler(this.txtOtp_TextChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1377, 447);
+            this.button1.Location = new System.Drawing.Point(516, 187);
+            this.button1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(273, 85);
+            this.button1.Size = new System.Drawing.Size(102, 36);
             this.button1.TabIndex = 21;
             this.button1.Text = "Save Scan";
             this.button1.UseVisualStyleBackColor = true;
@@ -91,9 +97,10 @@
             // 
             // btnStopScan
             // 
-            this.btnStopScan.Location = new System.Drawing.Point(1377, 323);
+            this.btnStopScan.Location = new System.Drawing.Point(516, 135);
+            this.btnStopScan.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.btnStopScan.Name = "btnStopScan";
-            this.btnStopScan.Size = new System.Drawing.Size(273, 85);
+            this.btnStopScan.Size = new System.Drawing.Size(102, 36);
             this.btnStopScan.TabIndex = 20;
             this.btnStopScan.Text = "Stop Scan";
             this.btnStopScan.UseVisualStyleBackColor = true;
@@ -103,11 +110,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(148, 84);
+            this.label1.Location = new System.Drawing.Point(56, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(310, 32);
+            this.label1.Size = new System.Drawing.Size(172, 13);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Enter Lead No Below:";
+            this.label1.Text = "Enter Customer ID No Below:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -115,35 +123,39 @@
             // 
             this.txtLead.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLead.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLead.Location = new System.Drawing.Point(154, 124);
+            this.txtLead.Location = new System.Drawing.Point(58, 52);
+            this.txtLead.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.txtLead.Name = "txtLead";
-            this.txtLead.Size = new System.Drawing.Size(267, 45);
+            this.txtLead.Size = new System.Drawing.Size(101, 22);
             this.txtLead.TabIndex = 18;
             this.txtLead.TextChanged += new System.EventHandler(this.txtLead_TextChanged_1);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(79, 524);
+            this.pictureBox1.Location = new System.Drawing.Point(30, 220);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1096, 517);
+            this.pictureBox1.Size = new System.Drawing.Size(411, 217);
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
             // btnLead
             // 
             this.btnLead.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLead.Location = new System.Drawing.Point(570, 113);
+            this.btnLead.Location = new System.Drawing.Point(264, 38);
+            this.btnLead.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.btnLead.Name = "btnLead";
-            this.btnLead.Size = new System.Drawing.Size(273, 85);
+            this.btnLead.Size = new System.Drawing.Size(102, 36);
             this.btnLead.TabIndex = 16;
-            this.btnLead.Text = "Search for Lead";
+            this.btnLead.Text = "Search";
             this.btnLead.UseVisualStyleBackColor = true;
             // 
             // btnStartScan
             // 
-            this.btnStartScan.Location = new System.Drawing.Point(1377, 201);
+            this.btnStartScan.Location = new System.Drawing.Point(516, 84);
+            this.btnStartScan.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.btnStartScan.Name = "btnStartScan";
-            this.btnStartScan.Size = new System.Drawing.Size(273, 85);
+            this.btnStartScan.Size = new System.Drawing.Size(102, 36);
             this.btnStartScan.TabIndex = 15;
             this.btnStartScan.Text = "Start Scan";
             this.btnStartScan.UseVisualStyleBackColor = true;
@@ -151,9 +163,10 @@
             // 
             // btnSearchPad
             // 
-            this.btnSearchPad.Location = new System.Drawing.Point(1377, 84);
+            this.btnSearchPad.Location = new System.Drawing.Point(516, 35);
+            this.btnSearchPad.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.btnSearchPad.Name = "btnSearchPad";
-            this.btnSearchPad.Size = new System.Drawing.Size(273, 85);
+            this.btnSearchPad.Size = new System.Drawing.Size(102, 36);
             this.btnSearchPad.TabIndex = 14;
             this.btnSearchPad.Text = "Search for Pad";
             this.btnSearchPad.UseVisualStyleBackColor = true;
@@ -168,10 +181,13 @@
             "Customer Initial",
             "Customer Signature",
             "SalesPerson Initial",
-            "SalesPerson Signature"});
-            this.comboBox1.Location = new System.Drawing.Point(452, 447);
+            "SalesPerson Signature",
+            "Witness Initial",
+            "Witness Signature"});
+            this.comboBox1.Location = new System.Drawing.Point(170, 187);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(396, 39);
+            this.comboBox1.Size = new System.Drawing.Size(196, 21);
             this.comboBox1.Sorted = true;
             this.comboBox1.TabIndex = 26;
             // 
@@ -179,18 +195,43 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(73, 443);
+            this.label3.Location = new System.Drawing.Point(27, 186);
+            this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(270, 32);
+            this.label3.Size = new System.Drawing.Size(115, 13);
             this.label3.TabIndex = 25;
             this.label3.Text = "Select Scan Mode:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // lblCustomer
+            // 
+            this.lblCustomer.AutoSize = true;
+            this.lblCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomer.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblCustomer.Location = new System.Drawing.Point(59, 84);
+            this.lblCustomer.Name = "lblCustomer";
+            this.lblCustomer.Size = new System.Drawing.Size(14, 16);
+            this.lblCustomer.TabIndex = 27;
+            this.lblCustomer.Text = "..";
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblError.Location = new System.Drawing.Point(59, 104);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(14, 16);
+            this.lblError.TabIndex = 28;
+            this.lblError.Text = "..";
+            // 
             // DigiScan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2100, 1175);
+            this.ClientSize = new System.Drawing.Size(747, 314);
+            this.Controls.Add(this.lblError);
+            this.Controls.Add(this.lblCustomer);
             this.Controls.Add(this.btnOtp);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtOtp);
@@ -204,6 +245,7 @@
             this.Controls.Add(this.btnSearchPad);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "DigiScan";
             this.Text = "DigiScan";
             this.Load += new System.EventHandler(this.DigiScan_Load);
@@ -230,5 +272,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblCustomer;
+        private System.Windows.Forms.Label lblError;
     }
 }
