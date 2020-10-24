@@ -149,6 +149,7 @@
             this.btnLead.TabIndex = 16;
             this.btnLead.Text = "Search";
             this.btnLead.UseVisualStyleBackColor = true;
+            this.btnLead.Click += new System.EventHandler(this.btnLead_Click_1);
             // 
             // btnStartScan
             // 

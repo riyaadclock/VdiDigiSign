@@ -43,6 +43,20 @@ namespace VddiDigiSign.Controllers
             return latestSignatureId;
         }
 
+        public string getCustomerName(string residentId)
+        {
+            string latestSignatureId = "Not Found";
+
+            string leadCheck = "";
+
+            leadCheck = "SELECT Max(FirstName) + ' ' + Max(LastName) FROM [ApplicationLeads] WHERE [ResidentId]=@0";
+
+            var db = new PetaPoco.Database("Olgarsconnection");
+            latestSignatureId = db.ExecuteScalar<string>(leadCheck, residentId);
+            return latestSignatureId;
+        }
+
+
         public int addSignature(Models.DigiSignature currentSignatureObject)
         {
 

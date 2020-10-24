@@ -195,5 +195,18 @@ namespace VddiDigiSign
         {
 
         }
+
+        private void btnLead_Click_1(object sender, EventArgs e)
+        {
+            string thisCustomer = "Not Found";
+            string customerId = "Not Found";
+
+            customerId = txtLead.Text;
+
+            Controllers.DigiSignOperations digiSig = new Controllers.DigiSignOperations();
+            thisCustomer = digiSig.getCustomerName(customerId);
+            lblCustomer.Text = thisCustomer;
+
+        }
     }
 }
