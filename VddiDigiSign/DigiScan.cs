@@ -126,6 +126,8 @@ namespace VddiDigiSign
 
         private void DigiScan_Load(object sender, EventArgs e)
         {
+            VSLog vsLogger = new VSLog();
+            vsLogger.WriteDebug("Loaded Scanning Page" + System.DateTime.Now.ToString());
             this.AutoSize = true;
             this.AutoSizeMode = AutoSizeMode.GrowOnly;
         }

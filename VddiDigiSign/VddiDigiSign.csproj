@@ -79,7 +79,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SMS\SMSOperations.cs" />
     <Compile Include="sopadDLL.cs" />
+    <Compile Include="Utility\DbValueCheck.cs" />
     <Compile Include="Utility\Encrypt.cs" />
+    <Compile Include="Utility\ProfileString.cs" />
+    <Compile Include="Utility\VSLog.cs" />
     <Compile Include="VDISign.cs">
       <SubType>Form</SubType>
     </Compile>

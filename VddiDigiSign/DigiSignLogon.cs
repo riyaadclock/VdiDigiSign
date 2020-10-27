@@ -50,6 +50,9 @@ namespace VddiDigiSign
 
         private void DigiSignLogon_Load(object sender, EventArgs e)
         {
+            VSLog vsLogger = new VSLog();
+            vsLogger.WriteDebug("Starting VDI Logon" + System.DateTime.Now.ToString());
+
             this.AutoSize = true;
             this.AutoSizeMode = AutoSizeMode.GrowOnly;
 
