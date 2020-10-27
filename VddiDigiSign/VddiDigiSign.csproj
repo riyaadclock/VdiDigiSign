@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\DigiSignOperations.cs" />
+    <Compile Include="Controllers\MessageOperations.cs" />
     <Compile Include="Controllers\UserOperations.cs" />
     <Compile Include="DigiScan.cs">
       <SubType>Form</SubType>
@@ -67,10 +68,16 @@
     </Compile>
     <Compile Include="Models\CurrentUser.cs" />
     <Compile Include="Models\DigiSignature.cs" />
+    <Compile Include="Models\MessageResponse.cs" />
+    <Compile Include="Models\MsgTextList.cs" />
+    <Compile Include="Models\OlgarsMessageLog.cs" />
     <Compile Include="Models\PetaPoco.cs" />
+    <Compile Include="Models\SMSMessage.cs" />
+    <Compile Include="Models\SMSObj.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SMS\SMSOperations.cs" />
     <Compile Include="sopadDLL.cs" />
     <Compile Include="Utility\Encrypt.cs" />
     <Compile Include="VDISign.cs">
