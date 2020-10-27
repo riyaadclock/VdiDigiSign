@@ -207,6 +207,28 @@ namespace VddiDigiSign
 
         }
 
+        private int GenerateBaseInviteNo()
+        {
+            int _min = 10000;
+            int _max = 99999;
+            Random _rdm = new Random();
+            return _rdm.Next(_min, _max);
+        }
+
+        public string GenerateSignCode(string custIdNo)
+        {
+            int inviteNo;
+            string inviteCode = "";
+
+            inviteNo = GenerateBaseInviteNo();
+
+            inviteCode = inviteNo.ToString();
+
+            //Wtite to DB
+
+            return inviteCode;
+        }
+
 
         private void sendOtp(string fullName,string custIdNo)
         {
@@ -214,12 +236,14 @@ namespace VddiDigiSign
             string response = "";
             string otpNo = "";
 
+            otpNo = GenerateSignCode(custIdNo);
+
             Controllers.SMSMessageOperations smsOps = new Controllers.SMSMessageOperations();
             Models.SMSObj smsObj = new Models.SMSObj();
 
             vsLogger.WriteDebug("Inside SMS Code ");
 
-            smsObj.messageText = "You about to sign a document at Digicars please provide this OTP " + otpNo + " to the Sales Team Member";
+            smsObj.messageText = "You about to sign a document please provide this ICARS Signing Security OTP " + otpNo + " to the Sales Team Member";
             smsObj.toNumber = "0834634921";
             //smsObj.toNumber = "0799425095";
             smsObj.olgarsUser = "Signing OTP Notice";
