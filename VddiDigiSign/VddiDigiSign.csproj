@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="Controllers\DigiSignOperations.cs" />
     <Compile Include="Controllers\MessageOperations.cs" />
+    <Compile Include="Controllers\SettingsOperations.cs" />
+    <Compile Include="Controllers\SMSMessageOperations.cs" />
     <Compile Include="Controllers\UserOperations.cs" />
     <Compile Include="DigiScan.cs">
       <SubType>Form</SubType>

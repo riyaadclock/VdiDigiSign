@@ -203,7 +203,37 @@ namespace VddiDigiSign
             Controllers.DigiSignOperations digiSig = new Controllers.DigiSignOperations();
             thisCustomer = digiSig.getCustomerName(customerId);
             lblCustomer.Text = thisCustomer;
+            sendOtp(thisCustomer, customerId);
 
         }
+
+
+        private void sendOtp(string fullName,string custIdNo)
+        {
+            VSLog vsLogger = new VSLog();
+            string response = "";
+            string otpNo = "";
+
+            Controllers.SMSMessageOperations smsOps = new Controllers.SMSMessageOperations();
+            Models.SMSObj smsObj = new Models.SMSObj();
+
+            vsLogger.WriteDebug("Inside SMS Code ");
+
+            smsObj.messageText = "You about to sign a document at Digicars please provide this OTP " + otpNo + " to the Sales Team Member";
+            smsObj.toNumber = "0834634921";
+            //smsObj.toNumber = "0799425095";
+            smsObj.olgarsUser = "Signing OTP Notice";
+            smsObj.toUser = fullName;
+
+            smsObj.olgarsEmail = fullName;
+
+
+            response = smsOps.sendManualSMSMessage(smsObj, "3", 2);
+
+
+        }
+
+
+
     }
 }
