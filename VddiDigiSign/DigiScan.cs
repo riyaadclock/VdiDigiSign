@@ -381,9 +381,16 @@ namespace VddiDigiSign
             btnStartScan.Visible = true;
             btnStopScan.Visible = true;
             btnSaveScan.Visible = true;
+        }
 
-
-
+        private void disableButtons(string custIdNo)
+        {
+            VSLog vsLogger = new VSLog();
+            vsLogger.WriteDebug("Disabling Buttons for ID No" + custIdNo);
+            btnSearchPad.Visible = false;
+            btnStartScan.Visible = false;
+            btnStopScan.Visible = false;
+            btnSaveScan.Visible = false;
         }
 
         private void btnOtp_Click(object sender, EventArgs e)
@@ -393,6 +400,7 @@ namespace VddiDigiSign
             string custIdNo = "";
 
             otpText = txtOtp.Text;
+            custIdNo = txtLead.Text;
 
             //If OTP equals what is on the DB then enable all the buttons
             otpCheck = checkCustOTP(custIdNo);
@@ -400,11 +408,12 @@ namespace VddiDigiSign
             if (otpCheck == otpText)
             {
                 //Enable
-
+                enableButtons(custIdNo);
             }
             else
             {
                 lblError.Text = "Please verify the OTP";
+                disableButtons(custIdNo);
             }
 
 
