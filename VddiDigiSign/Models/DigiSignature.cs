@@ -15,5 +15,8 @@ namespace VddiDigiSign.Models
         public string WitnessName { get; set; }
         public string AddedBy { get; set; }
         public DateTime DateAdded { get; set; }
+        public string OtpNo { get; set; }
+        public string ServerPath { get; set; }
+
     }
 }

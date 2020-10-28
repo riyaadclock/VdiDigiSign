@@ -229,6 +229,33 @@ namespace VddiDigiSign
             return inviteCode;
         }
 
+        public string getMobileNumber(string custIdNo)
+        {
+            string mobileNo  = "";
+
+            var db = new PetaPoco.Database("Guzoconnection");
+
+            mobileNo = db.ExecuteScalar<string>("select isnull(Max(MobileNumber),'0834634921') as MobileNumber from [ApplicationLeads] where ResidentId = @0", custIdNo);
+
+            mobileNo = "0834634921";
+
+            return mobileNo;
+        }
+
+        public string getCustOTP(string custIdNo)
+        {
+            string mobileNo = "";
+
+            var db = new PetaPoco.Database("Guzoconnection");
+
+            mobileNo = db.ExecuteScalar<string>("select isnull(Max(MobileNumber),'0834634921') as MobileNumber from [ApplicationLeads] where ResidentId = @0", custIdNo);
+
+            mobileNo = "0834634921";
+
+            return mobileNo;
+        }
+
+
 
         private void sendOtp(string fullName,string custIdNo)
         {
@@ -244,7 +271,7 @@ namespace VddiDigiSign
             vsLogger.WriteDebug("Inside SMS Code ");
 
             smsObj.messageText = "You about to sign a document please provide this ICARS Signing Security OTP " + otpNo + " to the Sales Team Member";
-            smsObj.toNumber = "0834634921";
+            smsObj.toNumber = getMobileNumber(custIdNo);   // "0834634921";
             //smsObj.toNumber = "0799425095";
             smsObj.olgarsUser = "Signing OTP Notice";
             smsObj.toUser = fullName;
@@ -254,7 +281,44 @@ namespace VddiDigiSign
 
             response = smsOps.sendManualSMSMessage(smsObj, "3", 2);
 
+            //Add the to the DB the OTP
+            Models.DigiSignature thisDigiSign = new Models.DigiSignature();
 
+            thisDigiSign.DateAdded = DateTime.Now;
+            thisDigiSign.AddedBy = fullName;
+            thisDigiSign.ResidentId = custIdNo;
+            thisDigiSign.ResidentInitial = "NotSetup";
+            thisDigiSign.ResidentSignature = "NotSetup";
+            thisDigiSign.SalesInitial = "NotSetup";
+            thisDigiSign.SalesSignature = "NotSetup";
+            thisDigiSign.WitnessInitial = "NotSetup";
+            thisDigiSign.WitnessName = "NotSetup";
+            thisDigiSign.WitnessSignature = "NotSetup";
+
+            int thiSigId = addSig(thisDigiSign);
+
+
+
+        }
+
+        public int addSig(Models.DigiSignature currentSig)
+        {
+            int StatusId = -1;
+            
+            var db = new PetaPoco.Database("Olgarsconnection");
+
+            try
+            {
+                db.Insert("DigiSignature", "DigiSignatureId", true, currentSig);
+                StatusId = currentSig.DigiSignatureId;
+            }
+            catch (Exception ex)
+            {
+                string errMessage = "";
+                errMessage = ex.Message.ToString();
+            }
+
+            return StatusId;
         }
 
 
