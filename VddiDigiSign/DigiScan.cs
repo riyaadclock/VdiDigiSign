@@ -143,7 +143,7 @@ namespace VddiDigiSign
             sopadDLL.SOPAD_stopCapture(padID, timestamp);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSaveScan_Click(object sender, EventArgs e)
         {
             thisFile = pictureBox1.Image;
 
@@ -292,8 +292,6 @@ namespace VddiDigiSign
 
             mobileNo = db.ExecuteScalar<string>("select isnull(Max([OtpNo]),'NotSetup') as OtpNo from [DigiSignature] where ResidentId = @0", custIdNo);
 
-            mobileNo = "0834634921";
-
             return mobileNo;
         }
 
@@ -375,7 +373,47 @@ namespace VddiDigiSign
             return StatusId;
         }
 
+        private void enableButtons(string custIdNo)
+        {
+            VSLog vsLogger = new VSLog();
+            vsLogger.WriteDebug("Enabling Buttons for ID No" + custIdNo);
+            btnSearchPad.Visible = true;
+            btnStartScan.Visible = true;
+            btnStopScan.Visible = true;
+            btnSaveScan.Visible = true;
 
 
+
+        }
+
+        private void btnOtp_Click(object sender, EventArgs e)
+        {
+            string otpText = "";
+            string otpCheck = "NotSetup";
+            string custIdNo = "";
+
+            otpText = txtOtp.Text;
+
+            //If OTP equals what is on the DB then enable all the buttons
+            otpCheck = checkCustOTP(custIdNo);
+
+            if (otpCheck == otpText)
+            {
+                //Enable
+
+            }
+            else
+            {
+                lblError.Text = "Please verify the OTP";
+            }
+
+
+
+        }
+
+        private void lblError_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
