@@ -233,7 +233,7 @@ namespace VddiDigiSign
         {
             string mobileNo  = "";
 
-            var db = new PetaPoco.Database("Guzoconnection");
+            var db = new PetaPoco.Database("Olgarsconnection");
 
             mobileNo = db.ExecuteScalar<string>("select isnull(Max(MobileNumber),'0834634921') as MobileNumber from [ApplicationLeads] where ResidentId = @0", custIdNo);
 
@@ -241,12 +241,41 @@ namespace VddiDigiSign
 
             return mobileNo;
         }
+
+        public int checkIfIdExists(string custIdNo)
+        {
+            int OwnershipStatus = 0;
+
+            var db = new PetaPoco.Database("Olgarsconnection");
+
+            OwnershipStatus = db.ExecuteScalar<int>("select count(*) from [DigiSignature] where [ResidentId] = @0  ", custIdNo);
+
+            return OwnershipStatus;
+        }
+
+        public int deleteCustId(string custIdNo)
+        {
+            int IsUserOwner = 0;
+            int tripLegDeleteId = 0;
+            IsUserOwner = checkIfIdExists(custIdNo);
+            if (IsUserOwner != 0)
+            {
+                var db = new PetaPoco.Database("Olgarsconnection");
+                tripLegDeleteId = db.Execute("Delete [DigiSignature] Where ResidentId = @0", custIdNo);
+            }
+            else
+            { tripLegDeleteId = -1; }
+
+            return tripLegDeleteId;
+        }
+
+
 
         public string getCustOTP(string custIdNo)
         {
             string mobileNo = "";
 
-            var db = new PetaPoco.Database("Guzoconnection");
+            var db = new PetaPoco.Database("Olgarsconnection");
 
             mobileNo = db.ExecuteScalar<string>("select isnull(Max(MobileNumber),'0834634921') as MobileNumber from [ApplicationLeads] where ResidentId = @0", custIdNo);
 
@@ -255,6 +284,18 @@ namespace VddiDigiSign
             return mobileNo;
         }
 
+        public string checkCustOTP(string custIdNo)
+        {
+            string mobileNo = "";
+
+            var db = new PetaPoco.Database("Olgarsconnection");
+
+            mobileNo = db.ExecuteScalar<string>("select isnull(Max([OtpNo]),'NotSetup') as OtpNo from [DigiSignature] where ResidentId = @0", custIdNo);
+
+            mobileNo = "0834634921";
+
+            return mobileNo;
+        }
 
 
         private void sendOtp(string fullName,string custIdNo)
@@ -294,11 +335,24 @@ namespace VddiDigiSign
             thisDigiSign.WitnessInitial = "NotSetup";
             thisDigiSign.WitnessName = "NotSetup";
             thisDigiSign.WitnessSignature = "NotSetup";
+            thisDigiSign.OtpNo = otpNo;
+            thisDigiSign.ServerPath = GenerateFileName();
+
+            //Remove whatever Signature is there
+            //Always a unique combination
+            //Need to delete the files as well at some point
+            deleteCustId(custIdNo);
 
             int thiSigId = addSig(thisDigiSign);
 
 
 
+        }
+
+
+        public string GenerateFileName()
+        {
+            return  DateTime.Now.ToString("yyyyMMddHHmmssfff") + "_" + Guid.NewGuid().ToString("N");
         }
 
         public int addSig(Models.DigiSignature currentSig)
