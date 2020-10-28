@@ -46,13 +46,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblCustomer = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
+            this.lblWitness = new System.Windows.Forms.Label();
+            this.txtWitness = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOtp
             // 
             this.btnOtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOtp.Location = new System.Drawing.Point(264, 135);
+            this.btnOtp.Location = new System.Drawing.Point(296, 137);
             this.btnOtp.Margin = new System.Windows.Forms.Padding(1);
             this.btnOtp.Name = "btnOtp";
             this.btnOtp.Size = new System.Drawing.Size(102, 36);
@@ -81,7 +83,7 @@
             this.txtOtp.Location = new System.Drawing.Point(58, 152);
             this.txtOtp.Margin = new System.Windows.Forms.Padding(1);
             this.txtOtp.Name = "txtOtp";
-            this.txtOtp.Size = new System.Drawing.Size(101, 22);
+            this.txtOtp.Size = new System.Drawing.Size(221, 22);
             this.txtOtp.TabIndex = 22;
             this.txtOtp.TextChanged += new System.EventHandler(this.txtOtp_TextChanged);
             // 
@@ -130,23 +132,23 @@
             this.txtLead.Location = new System.Drawing.Point(58, 52);
             this.txtLead.Margin = new System.Windows.Forms.Padding(1);
             this.txtLead.Name = "txtLead";
-            this.txtLead.Size = new System.Drawing.Size(101, 22);
+            this.txtLead.Size = new System.Drawing.Size(221, 22);
             this.txtLead.TabIndex = 18;
             this.txtLead.TextChanged += new System.EventHandler(this.txtLead_TextChanged_1);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(30, 220);
+            this.pictureBox1.Location = new System.Drawing.Point(31, 281);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(411, 217);
+            this.pictureBox1.Size = new System.Drawing.Size(411, 176);
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
             // btnLead
             // 
             this.btnLead.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLead.Location = new System.Drawing.Point(264, 38);
+            this.btnLead.Location = new System.Drawing.Point(296, 40);
             this.btnLead.Margin = new System.Windows.Forms.Padding(1);
             this.btnLead.Name = "btnLead";
             this.btnLead.Size = new System.Drawing.Size(102, 36);
@@ -191,18 +193,19 @@
             "SalesPerson Signature",
             "Witness Initial",
             "Witness Signature"});
-            this.comboBox1.Location = new System.Drawing.Point(170, 187);
+            this.comboBox1.Location = new System.Drawing.Point(202, 182);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(1);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(196, 21);
             this.comboBox1.Sorted = true;
             this.comboBox1.TabIndex = 26;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 186);
+            this.label3.Location = new System.Drawing.Point(59, 187);
             this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 13);
@@ -233,11 +236,35 @@
             this.lblError.Text = "..";
             this.lblError.Click += new System.EventHandler(this.lblError_Click);
             // 
+            // lblWitness
+            // 
+            this.lblWitness.AutoSize = true;
+            this.lblWitness.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWitness.Location = new System.Drawing.Point(56, 218);
+            this.lblWitness.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lblWitness.Name = "lblWitness";
+            this.lblWitness.Size = new System.Drawing.Size(164, 13);
+            this.lblWitness.TabIndex = 29;
+            this.lblWitness.Text = "Enter Witness Name Below:";
+            this.lblWitness.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtWitness
+            // 
+            this.txtWitness.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtWitness.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWitness.Location = new System.Drawing.Point(58, 232);
+            this.txtWitness.Margin = new System.Windows.Forms.Padding(1);
+            this.txtWitness.Name = "txtWitness";
+            this.txtWitness.Size = new System.Drawing.Size(340, 22);
+            this.txtWitness.TabIndex = 30;
+            // 
             // DigiScan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(747, 314);
+            this.Controls.Add(this.txtWitness);
+            this.Controls.Add(this.lblWitness);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.lblCustomer);
             this.Controls.Add(this.btnOtp);
@@ -282,5 +309,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblCustomer;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label lblWitness;
+        private System.Windows.Forms.TextBox txtWitness;
     }
 }

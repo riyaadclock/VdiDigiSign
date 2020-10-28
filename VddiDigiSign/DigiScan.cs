@@ -424,5 +424,19 @@ namespace VddiDigiSign
         {
 
         }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "Witness Initial" || comboBox1.Text == "Witness Signature")
+            {
+                txtWitness.Visible = true;
+                lblWitness.Visible = true;
+            }
+            else
+            {
+                txtWitness.Visible = false;
+                lblWitness.Visible = false;
+            }
+        }
     }
 }
