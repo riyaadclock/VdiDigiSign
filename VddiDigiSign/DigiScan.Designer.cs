@@ -247,6 +247,7 @@
             this.lblWitness.TabIndex = 29;
             this.lblWitness.Text = "Enter Witness Name Below:";
             this.lblWitness.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblWitness.Visible = false;
             // 
             // txtWitness
             // 
@@ -257,6 +258,8 @@
             this.txtWitness.Name = "txtWitness";
             this.txtWitness.Size = new System.Drawing.Size(340, 22);
             this.txtWitness.TabIndex = 30;
+            this.txtWitness.Visible = false;
+            this.txtWitness.WordWrap = false;
             // 
             // DigiScan
             // 
