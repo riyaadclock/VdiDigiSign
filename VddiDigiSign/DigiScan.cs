@@ -140,7 +140,10 @@ namespace VddiDigiSign
         private void btnStopScan_Click(object sender, EventArgs e)
         {
             //  Disable SignMode (back to Standby Mode)
-            sopadDLL.SOPAD_stopCapture(padID, timestamp);
+            //sopadDLL.SOPAD_stopCapture(padID, timestamp);
+            updateDigiField("7712076024085", "WitnessName", "RiyaadaShdhhsd");
+            updateDigiField("7712076024085", "ResidentInitial", "Kdfjiefdfkjsdkfjsdkjfk");
+
         }
 
         private void btnSaveScan_Click(object sender, EventArgs e)
@@ -280,6 +283,24 @@ namespace VddiDigiSign
             return tripLegDeleteId;
         }
 
+        public int updateDigiField(string custIdNo, string fieldName, string fieldValue)
+        {
+            int IsUserOwner = 0;
+            int tripLegDeleteId = 0;
+            IsUserOwner = checkIfIdExists(custIdNo);
+
+            string sqlExec = "update DigiSignature set " + fieldName + "=@0 where ResidentId = @1";
+
+            if (IsUserOwner != 0)
+            {
+                var db = new PetaPoco.Database("Olgarsconnection");
+                tripLegDeleteId = db.Execute(sqlExec, fieldValue,custIdNo);
+            }
+            else
+            { tripLegDeleteId = -1; }
+
+            return tripLegDeleteId;
+        }
 
 
         public string getCustOTP(string custIdNo)
