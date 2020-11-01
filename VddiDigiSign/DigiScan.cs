@@ -242,6 +242,17 @@ namespace VddiDigiSign
             return mobileNo;
         }
 
+        public string getCustDigiFolder(string custIdNo)
+        {
+            string folderName = "";
+
+            var db = new PetaPoco.Database("Olgarsconnection");
+
+            folderName = db.ExecuteScalar<string>("select Max(ServerPath) as ServerPath from [DigiSignature] where [ResidentId] = @0", custIdNo);
+
+            return folderName;
+        }
+
         public int checkIfIdExists(string custIdNo)
         {
             int OwnershipStatus = 0;
