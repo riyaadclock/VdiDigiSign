@@ -80,6 +80,9 @@ namespace VddiDigiSign.Controllers
 
             var db = new PetaPoco.Database("Olgarsconnection");
 
+            VSLog vsLogger = new VSLog();
+            vsLogger.WriteDebug("About to select");
+
             try
             {
                 checkedUser = db.ExecuteScalar<int>("SELECT Count(*) FROM [User] WHERE EmailAddress=@0 AND UserPassword=@1 AND SysStatus=0 and DeleteStatus=0", Email, encPassword);
@@ -90,7 +93,8 @@ namespace VddiDigiSign.Controllers
                 string sqlError = "";
                 string exMessage = ex.Message.ToString();
                 sqlError = db.LastSQL;
-
+                vsLogger.WriteDebug("Logon Error");
+                vsLogger.WriteDebug(exMessage);
                 apiResponse = exMessage;
                 checkedUser = 0;
             }

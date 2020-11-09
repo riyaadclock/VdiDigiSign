@@ -25,8 +25,13 @@ namespace VddiDigiSign
             }
             else
             {
+                //for Testing = 1
+                VSLog vsLogger = new VSLog();
+                vsLogger.WriteDebug("About to Logon");
+                vsLogger.WriteDebug(txtUser.Text);
 
-                int userstatus = 1;      //userOps.checkUserCreds(txtUser.Text, txtPwd.Text);
+                int userstatus = 1;
+                //userstatus = userOps.checkUserCreds(txtUser.Text, txtPwd.Text);
 
                 if (userstatus > 0)
                 {

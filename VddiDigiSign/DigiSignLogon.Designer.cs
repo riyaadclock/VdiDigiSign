@@ -38,9 +38,10 @@
             // 
             // btnLogon
             // 
-            this.btnLogon.Location = new System.Drawing.Point(388, 430);
+            this.btnLogon.Location = new System.Drawing.Point(146, 180);
+            this.btnLogon.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.btnLogon.Name = "btnLogon";
-            this.btnLogon.Size = new System.Drawing.Size(239, 91);
+            this.btnLogon.Size = new System.Drawing.Size(90, 38);
             this.btnLogon.TabIndex = 0;
             this.btnLogon.Text = "Logon";
             this.btnLogon.UseVisualStyleBackColor = true;
@@ -50,9 +51,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(382, 287);
+            this.label2.Location = new System.Drawing.Point(143, 120);
+            this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 32);
+            this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 27;
             this.label2.Text = "Password:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -61,10 +63,11 @@
             // 
             this.txtPwd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPwd.Location = new System.Drawing.Point(388, 327);
+            this.txtPwd.Location = new System.Drawing.Point(146, 137);
+            this.txtPwd.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.PasswordChar = '*';
-            this.txtPwd.Size = new System.Drawing.Size(410, 45);
+            this.txtPwd.Size = new System.Drawing.Size(155, 22);
             this.txtPwd.TabIndex = 26;
             this.txtPwd.TextChanged += new System.EventHandler(this.txtPwd_TextChanged);
             // 
@@ -72,9 +75,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(382, 130);
+            this.label1.Location = new System.Drawing.Point(143, 55);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 32);
+            this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 25;
             this.label1.Text = "User:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -83,9 +87,10 @@
             // 
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(388, 170);
+            this.txtUser.Location = new System.Drawing.Point(146, 71);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(410, 45);
+            this.txtUser.Size = new System.Drawing.Size(155, 22);
             this.txtUser.TabIndex = 24;
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
@@ -94,17 +99,18 @@
             this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(218, 47);
+            this.lblError.Location = new System.Drawing.Point(82, 20);
+            this.lblError.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 39);
+            this.lblError.Size = new System.Drawing.Size(0, 17);
             this.lblError.TabIndex = 28;
             this.lblError.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // DigiSignLogon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1203, 621);
+            this.ClientSize = new System.Drawing.Size(451, 260);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPwd);
@@ -112,8 +118,9 @@
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.btnLogon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "DigiSignLogon";
-            this.Text = "VDI DigiSign Logon";
+            this.Text = "VDI DigiSign Logon (V.1)";
             this.Load += new System.EventHandler(this.DigiSignLogon_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
